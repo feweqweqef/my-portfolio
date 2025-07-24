@@ -6,9 +6,12 @@
     <title>My Digital Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 <body>
+     <!-- Header -->
     <div class="container">
         <header>
             <div class="logo">My Digital Portfolio</div>
@@ -18,6 +21,60 @@
                 <a href="#contact" class="contact-btn">Contact</a>
             </nav>
         </header>
+        <!-- Introduction -->
+        <section class="hero">
+    <div class="hero-text">
+    <h1 id="typewriter" class="typed-text"></h1>
+        <h2 class="typed-text-2">A Software Engineer | AI Engineer | UI Developer</h2>
+        <div class="social-icons">
+            <a href="https://github.com/feweqweqef" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hafeezah-kasim-605890239/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/itshafeezahhh/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <!-- Resume Button -->
+        <a href="/cv/my resume.pdf" class="download-btn" download>
+  <i class="fas fa-download"></i> Download CV
+</a>
+
+<!-- Image of me -->
     </div>
+    <div class="hero-image">
+    <img src="/images/me.jpg" alt="Hafeezah" />
+  </div>
+</section>
+
+<!-- About me carousel -->
+<section class="about-carousel" id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="/images/singapore.jpg" alt="Singapore" />
+        <p>I'm Hafeezah, 20, from Singapore 🇸🇬</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="/images/poly.jpg" alt="Polytechnic" />
+        <p>I started coding in 2021 through polytechnic 💻</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="/images/grad.jpg" alt="ML Passion" />
+        <p>Machine learning & AI became my passion. I graduated with a <br>Diploma in AI in 2025</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="/images/code.jpg" alt="Projects" />
+        <p>I love building impactful systems and I want to inspire others to grow with technology</p>
+      </div>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
