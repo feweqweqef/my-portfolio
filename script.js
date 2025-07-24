@@ -38,7 +38,7 @@ function updateCarousel() {
   // Calculate center offset
   let offset = (slideWidth * current) - (containerWidth / 2) + (slideWidth / 2);
 
-  // ✅ Add buffer to avoid cutoff
+  // Add buffer to avoid cutoff
   const buffer = 40; // or try 50/60 if still cut off
   const maxOffset = totalWidth - containerWidth + buffer;
 
