@@ -248,7 +248,7 @@
 
 
 
-
+/* Carousel About Me Section */
 
 
 .about-carousel {
@@ -266,26 +266,32 @@
 
 .carousel-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1300px; /* stretch wider than before */
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
+  gap: 60px; /* increase spacing between slides */
   transition: transform 0.5s ease;
-  gap: 40px;
+  will-change: transform;
 }
 
 .carousel-slide {
-  min-width: 300px;
-  transition: transform 0.5s, filter 0.5s;
+  width: 320px; /* you can also increase the slide width if needed */
+  flex-shrink: 0;
   opacity: 0.5;
   transform: scale(0.8);
   filter: blur(2px);
   text-align: center;
+  transition: all 0.4s ease;
+}
+
+.carousel-slide.active {
+  transform: scale(1);
+  opacity: 1;
+  filter: none;
 }
 
 .carousel-slide img {
@@ -301,14 +307,7 @@
   font-size: 18px;
 }
 
-/* Active Slide Styling */
-.carousel-slide.active {
-  transform: scale(1);
-  opacity: 1;
-  filter: none;
-}
-
-/* Navigation Arrows */
+/* Buttons */
 .carousel-btn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
@@ -319,9 +318,19 @@
   border-radius: 50%;
   z-index: 10;
   transition: background 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-btn.prev {
+  left: -10px;
+}
+
+.carousel-btn.next {
+  right: -10px;
 }
 
 .carousel-btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
-

@@ -15,12 +15,12 @@ type();
 
 
 
-
-
 // CODE for the carousel slider in about me section
 const slides = document.querySelectorAll('.carousel-slide');
+const track = document.querySelector('.carousel-track');
 const nextBtn = document.querySelector('.next');
 const prevBtn = document.querySelector('.prev');
+
 let current = 0;
 
 function updateCarousel() {
@@ -31,33 +31,40 @@ function updateCarousel() {
     }
   });
 
-  const track = document.querySelector('.carousel-track');
-  const slideWidth = slides[0].offsetWidth + 40; // slide width + gap
-  const containerWidth = track.parentElement.offsetWidth; // visible container width
+  const slideWidth = slides[0].offsetWidth + 40; // slide + gap
+  const containerWidth = track.parentElement.offsetWidth;
+  const totalWidth = slideWidth * slides.length;
 
-  // Calculate offset so that the current slide is centered
+  // Calculate center offset
   let offset = (slideWidth * current) - (containerWidth / 2) + (slideWidth / 2);
 
-  // Prevent scrolling past the first slide (no negative offset)
-  if (offset < 0) offset = 0;
+  // ✅ Add buffer to avoid cutoff
+  const buffer = 40; // or try 50/60 if still cut off
+  const maxOffset = totalWidth - containerWidth + buffer;
 
-  // Prevent scrolling past the last slide
-  const maxOffset = slideWidth * (slides.length) - containerWidth;
+  // Clamp values
+  if (offset < 0) offset = 0;
   if (offset > maxOffset) offset = maxOffset;
 
   track.style.transform = `translateX(-${offset}px)`;
 }
 
+
+
 nextBtn.addEventListener('click', () => {
-  current = (current + 1) % slides.length;
-  updateCarousel();
+  if (current < slides.length - 1) {
+    current++;
+    updateCarousel();
+  }
 });
 
 prevBtn.addEventListener('click', () => {
-  current = (current - 1 + slides.length) % slides.length;
-  updateCarousel();
+  if (current > 0) {
+    current--;
+    updateCarousel();
+  }
 });
 
 window.addEventListener('load', updateCarousel);
-window.addEventListener('resize', updateCarousel); // optional: recalc on resize
+window.addEventListener('resize', updateCarousel); // recalc on screen resize
 
