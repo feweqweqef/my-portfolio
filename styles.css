@@ -273,13 +273,13 @@
 
 .carousel-track {
   display: flex;
-  gap: 60px; /* increase spacing between slides */
+  gap: 60px; 
   transition: transform 0.5s ease;
   will-change: transform;
 }
 
 .carousel-slide {
-  width: 320px; /* you can also increase the slide width if needed */
+  width: 320px; 
   flex-shrink: 0;
   opacity: 0.5;
   transform: scale(0.8);
@@ -333,4 +333,103 @@
 
 .carousel-btn:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+/* Skills Section */
+
+.skills-section {
+  padding: 1rem 2rem 4rem 2rem;
+  background-color: #07004D; 
+  color: white;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 36px;         
+  text-align: center;      
+  width: 100%;             
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.skills-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+  gap: 2rem; 
+  justify-items: center;
+  align-items: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 140px; /* Fixed height for all cards */
+  width: 140px;  /* Fixed width for all cards */
+  padding: 1rem;
+  border: 2px solid #8f80ac;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px #bb00ff88;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Ensure text is centered */
+}
+
+.skill-card:hover {
+  transform: scale(1.05); /* Reduced scale to prevent layout shifts */
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px #bb00ffcc;
+}
+
+.skill-card i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0; 
+}
+
+.skill-card p {
+  font-size: 0.85rem; 
+  margin-top: 0.5rem; 
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.2;
+  word-break: break-word; /* Handle long text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-card {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+  }
+  
+  .skill-card p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
 }
