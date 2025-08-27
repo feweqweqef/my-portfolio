@@ -1,0 +1,18 @@
+Introduction
+
+carousel Slider - about me section
+
+SKills - languages and frameworks
+
+Projects - Overview of github in card form
+
+Work Experience - Sections for internships, Pics and Projects done
+
+Testimonials Portion - download Copy
+
+Contact - Copy email function
+
+Certifications and Acheivements
+
+
+
